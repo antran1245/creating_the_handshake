@@ -7,5 +7,6 @@ const io = require('socket.io')(server, {cors: true})
 
 io.on("connection", socket => {
     console.log("Nice to meet you. (Shake hand)")
-    socket.emit("message", "Welcome. From Server.")
+    io.emit("welcome", "Welcome. From Server.")
+    // socket.on('back', data => io.emit("welcome",data))
 })
